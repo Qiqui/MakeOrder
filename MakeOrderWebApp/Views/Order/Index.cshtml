@@ -1,0 +1,42 @@
+﻿@model OrderVM
+
+<form method="post">
+    <div class="text-danger font-weight-bold" asp-validation-summary="All"></div>
+    <input type="hidden" asp-for="Id" value="" />
+    <div class="row">
+        <label asp-for="@Model.Number">Номер заказа @Model.Number</label>
+        <input type="hidden" asp-for="Number" value="@Model.Number" />
+        <span asp-validation-for="@Model.Number"></span>
+    </div>
+    <div class="row">
+        <label asp-for="@Model.SenderCity">Город отправителя</label>
+        <input asp-for="@Model.SenderCity" />
+        <span asp-validation-for="@Model.SenderCity"></span>
+    </div>
+    <div class="row">
+        <label asp-for="@Model.SenderAdress">Адрес отправителя</label>
+        <input asp-for="@Model.SenderAdress" />
+        <span asp-validation-for="@Model.SenderAdress"></span>
+    </div>
+    <div class="row">
+        <label asp-for="@Model.RecipientCity">Город получателя</label>
+        <input asp-for="@Model.RecipientCity" />
+        <span asp-validation-for="@Model.RecipientCity"></span>
+    </div>
+    <div class="row">
+        <label asp-for="@Model.RecipientAdress">Адрес получателя</label>
+        <input asp-for="@Model.RecipientAdress" />
+        <span asp-validation-for="@Model.RecipientAdress"></span>
+        <div class="row">
+            <label asp-for="@Model.CargoWeigth">Номер Вес груза</label>
+            <input asp-for="@Model.CargoWeigth" />
+            <span asp-validation-for="@Model.CargoWeigth"></span>
+        </div>
+        <div class="row">
+            <label asp-for="@Model.Date">Дата забора груза</label>
+            <input asp-for="@Model.Date" />
+            <span asp-validation-for="@Model.Date"></span>
+        </div>
+
+        <button type="submit" class="btn btn-outline-success" asp-controller="Order" asp-action="Create"> Оформить заказ </button>
+</form>
