@@ -17,7 +17,8 @@ namespace MakeOrderWebApp.Controllers
         {
             var orderVM = new OrderVM()
             {
-                Number = _ordersRepository.IncreaseNumber()
+                Number = _ordersRepository.IncreaseNumber(),
+                Date = DateTime.Now.Date
             };
 
             return View(orderVM);
